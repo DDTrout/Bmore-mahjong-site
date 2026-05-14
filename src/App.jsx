@@ -82,7 +82,7 @@ export default function App() {
             <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Upcoming Events</p>
             <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">Come play with us.</h2>
           </div>
-          <p className="max-w-xl text-[#fff7df]/70">Free intros, guided gameplay, and welcoming tables for every skill level.</p>
+          <p className="max-w-xl text-[#fff7df]/70">Upcoming pop-ups plus recurring monthly events with intro, guided play, and open play tables for every skill level.</p>
         </div>
 
         <article className="overflow-hidden rounded-[2rem] border border-[#fff7df]/15 bg-[#111] shadow-2xl">
@@ -114,6 +114,62 @@ export default function App() {
             </div>
           </div>
         </article>
+
+        <div className="mt-10">
+          <div className="mb-6">
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Monthly Events</p>
+            <h3 className="mt-3 text-3xl font-black tracking-tight md:text-4xl">Reserve your seat at the table.</h3>
+            <p className="mt-4 max-w-3xl leading-8 text-[#fff7df]/75">
+              Registration and payment are required to reserve a seat. Tickets are <strong className="text-[#fff7df]">$25 per person</strong> and include a seat at an intro, guided play, or open play table, one drink, one raffle ticket for Mahjong prizes, and a fun, engaging, entertaining, welcoming Mahjong experience that will have you coming back each month.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            <article className="rounded-[2rem] border border-[#f9c400]/25 bg-white/5 p-7 shadow-xl">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">2nd Monday of each month</p>
+                  <h4 className="mt-2 text-2xl font-black">Peabody Heights Brewery</h4>
+                </div>
+                <span className="rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
+              </div>
+              <p className="mt-5 leading-8 text-[#fff7df]/78">
+                Intro to American Mahjong and guided play American Mahjong tables.
+              </p>
+              <div className="mt-5 rounded-2xl bg-black/35 p-5">
+                <p className="font-black text-[#f9c400]">Location</p>
+                <p className="mt-2 text-[#fff7df]/75">401 East 30th Street<br />Baltimore, MD 21218</p>
+              </div>
+            </article>
+
+            <article className="rounded-[2rem] border border-[#f9c400]/25 bg-white/5 p-7 shadow-xl">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">2nd Thursday of each month</p>
+                  <h4 className="mt-2 text-2xl font-black">Blue Pitt</h4>
+                </div>
+                <span className="rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
+              </div>
+              <p className="mt-5 leading-8 text-[#fff7df]/78">
+                Intro to American Mahjong and guided play American Mahjong tables.
+              </p>
+              <div className="mt-5 rounded-2xl bg-black/35 p-5">
+                <p className="font-black text-[#f9c400]">Location</p>
+                <p className="mt-2 text-[#fff7df]/75">1601 Union Ave<br />Baltimore, MD 21211</p>
+              </div>
+            </article>
+          </div>
+
+          <div className="mt-6 rounded-[2rem] border border-[#d90416]/40 bg-[#d90416]/15 p-7 text-center">
+            <h4 className="text-2xl font-black">Get your ticket today — we have your seat waiting.</h4>
+            <p className="mx-auto mt-3 max-w-3xl leading-8 text-[#fff7df]/75">
+              Each ticket includes a seat at an intro, guided play, or open play table, one drink, one raffle ticket for Mahjong prizes, and a fun Mahjong experience.
+            </p>
+            <a href="https://forms.gle/o1Hwyrj5sqdB4cM27" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#f9c400] px-8 py-4 font-black text-black shadow-lg shadow-[#f9c400]/20 transition hover:scale-[1.02]">
+              Register & Pay for Monthly Events ↗
+            </a>
+          </div>
+        </div>
       </section>
 
       <section id="history" className="relative mx-auto max-w-7xl px-6 py-16">
