@@ -146,7 +146,7 @@ export default function App() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">2nd Thursday of each month</p>
-                  <h4 className="mt-2 text-2xl font-black">Blue Pitt</h4>
+                  <h4 className="mt-2 text-2xl font-black">Blue Pit BBQ</h4>
                 </div>
                 <span className="rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
               </div>
