@@ -1,6 +1,7 @@
 import React from "react";
 
 const logoSrc = "/BMM LOGO.png";
+const ticketUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe3fkvrORXBi9bv9yYEx8yP_zYFXOUXewz4Ssa90LYAlSAVow/viewform";
 
 const eventFlyers = [
   { src: "/blue-pit-flyer.png", alt: "Bmore Mahjong night flyer at Blue Pit BBQ" },
@@ -216,7 +217,7 @@ export default function App() {
             <p className="mx-auto mt-3 max-w-3xl leading-8 text-[#fff7df]/75">
               Each ticket includes a seat at an intro, guided play, or open play table, one drink, one raffle ticket for Mahjong prizes, and a fun Mahjong experience.
             </p>
-            <a href="https://forms.gle/o1Hwyrj5sqdB4cM27" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#f9c400] px-8 py-4 font-black text-black shadow-lg shadow-[#f9c400]/20 transition hover:scale-[1.02]">
+            <a href={ticketUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#f9c400] px-8 py-4 font-black text-black shadow-lg shadow-[#f9c400]/20 transition hover:scale-[1.02]">
               Register & Pay for Monthly Events ↗
             </a>
           </div>
