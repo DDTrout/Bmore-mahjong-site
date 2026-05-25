@@ -1,0 +1,13 @@
+
+UPDATED SITE NOTES
+
+The Monthly Events section has been updated so:
+- "Get your ticket today — we have your seat waiting." now appears at the top
+- Flyer carousel remains under the Events section
+
+To update GitHub:
+1. Extract this ZIP
+2. Upload and replace files in your GitHub repo
+3. Commit changes
+
+Vercel will automatically redeploy if connected to GitHub.
