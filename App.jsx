@@ -1,6 +1,24 @@
 import React from "react";
 
 const logoSrc = "/BMM LOGO.png";
+const eventLogos = [
+  { src: "/Peabody Logo.png", alt: "Peabody Heights Brewery logo" },
+  { src: "/Union Craft Logo.png", alt: "Union Craft Brewing logo" },
+  { src: "/Blue Pit Logo.png", alt: "Blue Pit BBQ logo" },
+];
+
+function EventLogoStrip() {
+  return (
+    <div className="mt-6 flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-black/25 p-4">
+      <span className="mr-1 text-xs font-black uppercase tracking-[0.2em] text-[#fff7df]/55">Partners</span>
+      {eventLogos.map((logo) => (
+        <span key={logo.alt} className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 shadow-lg">
+          <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export default function App() {
   return (
@@ -82,7 +100,7 @@ export default function App() {
             <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Upcoming Events</p>
             <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">Come play with us.</h2>
           </div>
-          <p className="max-w-xl text-[#fff7df]/70">Free intros, guided gameplay, and welcoming tables for every skill level.</p>
+          <p className="max-w-xl text-[#fff7df]/70">Upcoming pop-ups plus recurring monthly events with intro, guided play, and open play tables for every skill level.</p>
         </div>
 
         <article className="overflow-hidden rounded-[2rem] border border-[#fff7df]/15 bg-[#111] shadow-2xl">
@@ -108,12 +126,89 @@ export default function App() {
                 <div className="rounded-2xl bg-white/5 p-4"><div className="mb-2 text-xl">📅</div><strong>June 21st</strong><br /><span className="text-sm text-[#fff7df]/65">Go Skateboarding Day</span></div>
                 <div className="rounded-2xl bg-white/5 p-4"><div className="mb-2 text-xl">⏰</div><strong>12–6 PM</strong><br /><span className="text-sm text-[#fff7df]/65">All are welcome</span></div>
               </div>
+              <EventLogoStrip />
               <p className="mt-6 rounded-2xl border border-[#f9c400]/30 bg-[#f9c400]/10 p-5 font-bold text-[#fff7df]">
                 Come for the skating, stay for the vibes. Let’s build community one tile at a time. No experience needed.
               </p>
             </div>
           </div>
         </article>
+
+        <div className="mt-10">
+          <div className="mb-6">
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Monthly Events</p>
+            <h3 className="mt-3 text-3xl font-black tracking-tight md:text-4xl">Reserve your seat at the table.</h3>
+            <p className="mt-4 max-w-3xl leading-8 text-[#fff7df]/75">
+              Registration and payment are required to reserve a seat. Tickets are <strong className="text-[#fff7df]">$25 per person</strong> and include a seat at an intro, guided play, or open play table, one drink, one raffle ticket for Mahjong prizes, and a fun, engaging, entertaining, welcoming Mahjong experience that will have you coming back each month. Check our social media pages for special pop-ups in your area.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            <article className="rounded-[2rem] border border-[#f9c400]/25 bg-white/5 p-7 shadow-xl">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">2nd Monday of each month</p>
+                  <h4 className="mt-2 text-2xl font-black">Peabody Heights Brewery</h4>
+                </div>
+                <span className="rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
+              </div>
+              <p className="mt-5 leading-8 text-[#fff7df]/78">
+                Intro to American Mahjong and guided play American Mahjong tables.
+              </p>
+              <div className="mt-5 rounded-2xl bg-black/35 p-5">
+                <p className="font-black text-[#f9c400]">Location</p>
+                <p className="mt-2 text-[#fff7df]/75">401 East 30th Street<br />Baltimore, MD 21218</p>
+              </div>
+              <EventLogoStrip />
+            </article>
+
+            <article className="rounded-[2rem] border border-[#f9c400]/25 bg-white/5 p-7 shadow-xl">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">2nd Thursday of each month</p>
+                  <h4 className="mt-2 text-2xl font-black">Blue Pit BBQ</h4>
+                </div>
+                <span className="rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
+              </div>
+              <p className="mt-5 leading-8 text-[#fff7df]/78">
+                Intro to American Mahjong and guided play American Mahjong tables.
+              </p>
+              <div className="mt-5 rounded-2xl bg-black/35 p-5">
+                <p className="font-black text-[#f9c400]">Location</p>
+                <p className="mt-2 text-[#fff7df]/75">1601 Union Ave<br />Baltimore, MD 21211</p>
+              </div>
+              <EventLogoStrip />
+            </article>
+
+            <article className="rounded-[2rem] border border-[#f9c400]/25 bg-white/5 p-7 shadow-xl">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">3rd Tuesday of each month</p>
+                  <h4 className="mt-2 text-2xl font-black">Union Craft Brewing</h4>
+                </div>
+                <span className="rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
+              </div>
+              <p className="mt-5 leading-8 text-[#fff7df]/78">
+                Intro to American Mahjong and guided play American Mahjong tables.
+              </p>
+              <div className="mt-5 rounded-2xl bg-black/35 p-5">
+                <p className="font-black text-[#f9c400]">Location</p>
+                <p className="mt-2 text-[#fff7df]/75">1700 W 41st St<br />Baltimore, MD 21211</p>
+              </div>
+              <EventLogoStrip />
+            </article>
+          </div>
+
+          <div className="mt-6 rounded-[2rem] border border-[#d90416]/40 bg-[#d90416]/15 p-7 text-center">
+            <h4 className="text-2xl font-black">Get your ticket today — we have your seat waiting.</h4>
+            <p className="mx-auto mt-3 max-w-3xl leading-8 text-[#fff7df]/75">
+              Each ticket includes a seat at an intro, guided play, or open play table, one drink, one raffle ticket for Mahjong prizes, and a fun Mahjong experience.
+            </p>
+            <a href="https://forms.gle/o1Hwyrj5sqdB4cM27" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#f9c400] px-8 py-4 font-black text-black shadow-lg shadow-[#f9c400]/20 transition hover:scale-[1.02]">
+              Register & Pay for Monthly Events ↗
+            </a>
+          </div>
+        </div>
       </section>
 
       <section id="history" className="relative mx-auto max-w-7xl px-6 py-16">
