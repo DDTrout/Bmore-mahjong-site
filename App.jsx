@@ -1,36 +1,21 @@
 import React from "react";
 
 const logoSrc = "/BMM LOGO.png";
-const ticketUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe3fkvrORXBi9bv9yYEx8yP_zYFXOUXewz4Ssa90LYAlSAVow/viewform";
-
-const eventFlyers = [
-  { src: "/blue-pit-flyer.png", alt: "Bmore Mahjong night flyer at Blue Pit BBQ" },
-  { src: "/peabody-flyer.png", alt: "Bmore Mahjong night flyer at Peabody Heights Brewery" },
-  { src: "/union-craft-flyer.png", alt: "Bmore Mahjong night flyer at Union Craft Brewing" },
-  { src: "/go-skate-flyer.png", alt: "Bmore Mahjong Go Skateboarding Day flyer" },
+const eventLogos = [
+  { src: "/Peabody Logo.png", alt: "Peabody Heights Brewery logo" },
+  { src: "/Union Craft Logo.png", alt: "Union Craft Brewing logo" },
+  { src: "/Blue Pit Logo.png", alt: "Blue Pit BBQ logo" },
 ];
 
-function FlyerCarousel() {
+function EventLogoStrip() {
   return (
-    <div className="mt-10 rounded-[2rem] border border-[#f9c400]/25 bg-white/5 p-5 shadow-2xl">
-      <div className="mb-5 flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
-        <div>
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Event Flyers</p>
-          <h3 className="mt-2 text-2xl font-black tracking-tight">Swipe through what is coming up.</h3>
-        </div>
-        <p className="text-sm font-semibold text-[#fff7df]/60">Scroll sideways to view each flyer.</p>
-      </div>
-      <div className="flex snap-x gap-5 overflow-x-auto pb-4">
-        {eventFlyers.map((flyer) => (
-          <div key={flyer.src} className="min-w-[280px] snap-center sm:min-w-[420px] lg:min-w-[520px]">
-            <img
-              src={flyer.src}
-              alt={flyer.alt}
-              className="h-[360px] w-full rounded-[1.5rem] border border-white/10 bg-black object-contain shadow-xl sm:h-[430px] lg:h-[500px]"
-            />
-          </div>
-        ))}
-      </div>
+    <div className="mt-6 flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-black/25 p-4">
+      <span className="mr-1 text-xs font-black uppercase tracking-[0.2em] text-[#fff7df]/55">Partners</span>
+      {eventLogos.map((logo) => (
+        <span key={logo.alt} className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 shadow-lg">
+          <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
+        </span>
+      ))}
     </div>
   );
 }
@@ -118,35 +103,11 @@ export default function App() {
           <p className="max-w-xl text-[#fff7df]/70">Upcoming pop-ups plus recurring monthly events with intro, guided play, and open play tables for every skill level.</p>
         </div>
 
-        <article className="overflow-hidden rounded-[2rem] border border-[#fff7df]/15 bg-[#111] shadow-2xl">
-          <div className="grid md:grid-cols-[.85fr_1.15fr]">
-            <div className="bg-[#f9c400] p-8 text-black">
-              <div className="rounded-[1.5rem] bg-black/85 p-6 text-[#fff7df]">
-                <h3 className="text-4xl font-black leading-none">Skate. Mahjong. Music. Food. Fun.</h3>
-                <div className="mt-6 grid grid-cols-2 gap-3 text-sm font-bold">
-                  <span>🛹 Skate</span>
-                  <span>🀄 Mahjong</span>
-                  <span>🎵 Music</span>
-                  <span>🍽️ Food</span>
-                </div>
-              </div>
-            </div>
-            <div className="p-8 md:p-10">
-              <p className="text-xl font-bold text-[#f9c400]">Join Bmore Mahjong for Go Skateboarding Day at Hazelwood Skatepark!</p>
-              <p className="mt-4 leading-8 text-[#fff7df]/78">
-                We are bringing the tiles to the park. Come hang with us and stop by our tent for a <strong className="text-[#fff7df]">FREE intro to American Mahjong</strong> plus guided gameplay. Whether you have never played or just want to jump in, we have got you covered.
-              </p>
-              <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl bg-white/5 p-4"><div className="mb-2 text-xl">📍</div><strong>Hazelwood Park</strong><br /><span className="text-sm text-[#fff7df]/65">4924 Hazelwood Ave, Baltimore, MD 21206</span></div>
-                <div className="rounded-2xl bg-white/5 p-4"><div className="mb-2 text-xl">📅</div><strong>June 21st</strong><br /><span className="text-sm text-[#fff7df]/65">Go Skateboarding Day</span></div>
-                <div className="rounded-2xl bg-white/5 p-4"><div className="mb-2 text-xl">⏰</div><strong>12–6 PM</strong><br /><span className="text-sm text-[#fff7df]/65">All are welcome</span></div>
-              </div>
-              <p className="mt-6 rounded-2xl border border-[#f9c400]/30 bg-[#f9c400]/10 p-5 font-bold text-[#fff7df]">
-                Come for the skating, stay for the vibes. Let’s build community one tile at a time. No experience needed.
-              </p>
-            </div>
-          </div>
-        </article>
+        <div className="rounded-[2rem] border border-[#f9c400]/20 bg-white/5 p-8 text-center">
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Special Events</p>
+          <h3 className="mt-3 text-3xl font-black">Watch this space</h3>
+          <p className="mt-4 max-w-2xl mx-auto leading-8 text-[#fff7df]/75">We announce pop-up events throughout the year. Follow us on social media for the latest community events and special Mahjong experiences.</p>
+        </div>
 
         <div className="mt-10">
           <div className="mb-6">
@@ -173,6 +134,7 @@ export default function App() {
                 <p className="font-black text-[#f9c400]">Location</p>
                 <p className="mt-2 text-[#fff7df]/75">401 East 30th Street<br />Baltimore, MD 21218</p>
               </div>
+              <EventLogoStrip />
             </article>
 
             <article className="rounded-[2rem] border border-[#f9c400]/25 bg-white/5 p-7 shadow-xl">
@@ -190,6 +152,7 @@ export default function App() {
                 <p className="font-black text-[#f9c400]">Location</p>
                 <p className="mt-2 text-[#fff7df]/75">1601 Union Ave<br />Baltimore, MD 21211</p>
               </div>
+              <EventLogoStrip />
             </article>
 
             <article className="rounded-[2rem] border border-[#f9c400]/25 bg-white/5 p-7 shadow-xl">
@@ -207,17 +170,16 @@ export default function App() {
                 <p className="font-black text-[#f9c400]">Location</p>
                 <p className="mt-2 text-[#fff7df]/75">1700 W 41st St<br />Baltimore, MD 21211</p>
               </div>
+              <EventLogoStrip />
             </article>
           </div>
-
-          <FlyerCarousel />
 
           <div className="mt-6 rounded-[2rem] border border-[#d90416]/40 bg-[#d90416]/15 p-7 text-center">
             <h4 className="text-2xl font-black">Get your ticket today — we have your seat waiting.</h4>
             <p className="mx-auto mt-3 max-w-3xl leading-8 text-[#fff7df]/75">
               Each ticket includes a seat at an intro, guided play, or open play table, one drink, one raffle ticket for Mahjong prizes, and a fun Mahjong experience.
             </p>
-            <a href={ticketUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#f9c400] px-8 py-4 font-black text-black shadow-lg shadow-[#f9c400]/20 transition hover:scale-[1.02]">
+            <a href="https://forms.gle/o1Hwyrj5sqdB4cM27" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#f9c400] px-8 py-4 font-black text-black shadow-lg shadow-[#f9c400]/20 transition hover:scale-[1.02]">
               Register & Pay for Monthly Events ↗
             </a>
           </div>
