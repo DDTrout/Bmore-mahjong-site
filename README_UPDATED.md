@@ -1,11 +1,13 @@
-# Bmore Mahjong Updated Website
+# Bmore Mahjong Website Update
 
 Updates included:
-- Moved "Get your ticket today — we have your seat waiting." section to the top of the Monthly Events section
-- Added flyer carousel under Events section
-- Ready for GitHub + Vercel deployment
+- Removed the Go Skate Day event information from the Events section
+- Removed flyer PNG usage from the website files
+- Kept the "Come play with us" section focused on monthly events
+- Kept the Register & Pay button intact and linked to the existing registration form
 
 Deploy:
-1. Upload contents to GitHub
-2. Connect repo to Vercel
-3. Deploy using Vite defaults
+1. Extract this ZIP
+2. Upload and replace files in your GitHub repository
+3. Commit changes
+4. Vercel will redeploy automatically if connected to GitHub
