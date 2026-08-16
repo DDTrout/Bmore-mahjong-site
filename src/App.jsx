@@ -1,21 +1,29 @@
 import React from "react";
 
 const logoSrc = "/BMM LOGO.png";
-const eventLogos = [
-  { src: "/Peabody Logo.png", alt: "Peabody Heights Brewery logo" },
-  { src: "/Union Craft Logo.png", alt: "Union Craft Brewing logo" },
-  { src: "/Blue Pit Logo.png", alt: "Blue Pit BBQ logo" },
+const registrationUrl = "https://forms.gle/o1Hwyrj5sqdB4cM27";
+
+const popUpEvents = [
+  {
+    name: "Harford Vineyard & Winery",
+    logo: "/Harford Vineyard Logo.png",
+    location: "Forest Hill, Maryland",
+    date: "Sunday, October 4, 2026",
+  },
+  {
+    name: "Joanna's Cafe",
+    logo: "/Joannas Cafe Logo.png",
+    location: "Dundalk, Maryland",
+    date: "Tuesday, October 27, 2026",
+  },
 ];
 
-function EventLogoStrip() {
+function VenueLogo({ src, alt, size = "monthly" }) {
+  const sizing = size === "popup" ? "h-24 w-32 sm:h-28 sm:w-36" : "h-20 w-24 sm:h-24 sm:w-28";
+
   return (
-    <div className="mt-6 flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-black/25 p-4">
-      <span className="mr-1 text-xs font-black uppercase tracking-[0.2em] text-[#fff7df]/55">Monthly venues</span>
-      {eventLogos.map((logo) => (
-        <span key={logo.alt} className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 shadow-lg">
-          <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
-        </span>
-      ))}
+    <div className={`${sizing} flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-black/10 bg-white p-2.5 shadow-[0_12px_30px_rgba(0,0,0,0.28)] ring-1 ring-white/10`}>
+      <img src={src} alt={alt} className="h-full w-full object-contain" />
     </div>
   );
 }
@@ -97,30 +105,61 @@ export default function App() {
       <section id="events" className="relative mx-auto max-w-7xl px-6 py-16">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Monthly Events</p>
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Events</p>
             <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">Come play with us.</h2>
           </div>
-          <p className="max-w-xl text-[#fff7df]/70">Recurring monthly events with intro, guided play, and open play tables for every skill level.</p>
+          <p className="max-w-xl text-[#fff7df]/70">Join us for recurring monthly Mahjong gatherings or special pop-up events around Baltimore and beyond.</p>
         </div>
 
-        <div className="rounded-[2rem] border border-[#d90416]/40 bg-[#d90416]/15 p-7 text-center">
-          <h3 className="text-2xl font-black">Get your ticket today — we have your seat waiting.</h3>
-          <p className="mx-auto mt-3 max-w-3xl leading-8 text-[#fff7df]/75">
-            Registration and payment are required to reserve a seat. Tickets are <strong className="text-[#fff7df]">$25 per person</strong> and include a seat at an intro, guided play, or open play table, one drink, one raffle ticket for Mahjong prizes, and a fun Mahjong experience.
-          </p>
-          <a href="https://forms.gle/o1Hwyrj5sqdB4cM27" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#f9c400] px-8 py-4 font-black text-black shadow-lg shadow-[#f9c400]/20 transition hover:scale-[1.02]">
-            Register & Pay for Monthly Events ↗
-          </a>
+        <div className="grid gap-5 md:grid-cols-2">
+          <div className="rounded-[2rem] border border-[#f9c400]/40 bg-[#f9c400]/10 p-7">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">Monthly Events</p>
+            <div className="mt-3 flex items-end gap-2">
+              <span className="text-5xl font-black">$25</span>
+              <span className="pb-1 text-[#fff7df]/65">per person</span>
+            </div>
+            <p className="mt-4 leading-8 text-[#fff7df]/75">
+              Registration and payment are required to reserve a seat. Tickets include a seat at an intro, guided play, or open play table, one drink, one raffle ticket for Mahjong prizes, and a fun Mahjong experience.
+            </p>
+            <a href={registrationUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#f9c400] px-7 py-3 font-black text-black transition hover:scale-[1.02]">
+              Register & Pay for Monthly Events ↗
+            </a>
+          </div>
+
+          <div className="rounded-[2rem] border border-[#d90416]/45 bg-[#d90416]/15 p-7">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-[#ff6b78]">Pop-Up Events</p>
+            <div className="mt-3 flex items-end gap-2">
+              <span className="text-5xl font-black">$35</span>
+              <span className="pb-1 text-[#fff7df]/65">per person</span>
+            </div>
+            <p className="mt-4 leading-8 text-[#fff7df]/75">
+              Special Mahjong experiences hosted at featured local venues. Check the upcoming pop-ups below for dates and venue details.
+            </p>
+            <a href={registrationUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-[#d90416] px-7 py-3 font-black text-white shadow-lg shadow-[#d90416]/20 transition hover:scale-[1.02]">
+              Register & Pay for Pop-Up Events ↗
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-12 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Monthly Events</p>
+            <h3 className="mt-2 text-3xl font-black">Our recurring tables</h3>
+          </div>
+          <span className="hidden rounded-full border border-[#f9c400]/30 px-4 py-2 text-sm font-black text-[#f9c400] sm:inline">$25 per person</span>
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           <article className="rounded-[2rem] border border-[#f9c400]/25 bg-white/5 p-7 shadow-xl">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">2nd Monday of each month</p>
-                <h4 className="mt-2 text-2xl font-black">Peabody Heights Brewery</h4>
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-4">
+                <VenueLogo src="/Peabody Logo.png" alt="Peabody Heights Brewery logo" />
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">2nd Monday of each month</p>
+                  <h4 className="mt-2 text-2xl font-black">Peabody Heights Brewery</h4>
+                </div>
               </div>
-              <span className="rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
+              <span className="w-fit rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
             </div>
             <p className="mt-5 leading-8 text-[#fff7df]/78">
               Intro to American Mahjong and guided play American Mahjong tables.
@@ -129,16 +168,18 @@ export default function App() {
               <p className="font-black text-[#f9c400]">Location</p>
               <p className="mt-2 text-[#fff7df]/75">401 East 30th Street<br />Baltimore, MD 21218</p>
             </div>
-            <EventLogoStrip />
           </article>
 
           <article className="rounded-[2rem] border border-[#f9c400]/25 bg-white/5 p-7 shadow-xl">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">2nd Thursday of each month</p>
-                <h4 className="mt-2 text-2xl font-black">Blue Pit BBQ</h4>
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-4">
+                <VenueLogo src="/Blue Pit Logo.png" alt="Blue Pit BBQ logo" />
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">2nd Thursday of each month</p>
+                  <h4 className="mt-2 text-2xl font-black">Blue Pit BBQ</h4>
+                </div>
               </div>
-              <span className="rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
+              <span className="w-fit rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
             </div>
             <p className="mt-5 leading-8 text-[#fff7df]/78">
               Intro to American Mahjong and guided play American Mahjong tables.
@@ -147,16 +188,18 @@ export default function App() {
               <p className="font-black text-[#f9c400]">Location</p>
               <p className="mt-2 text-[#fff7df]/75">1601 Union Ave<br />Baltimore, MD 21211</p>
             </div>
-            <EventLogoStrip />
           </article>
 
           <article className="rounded-[2rem] border border-[#f9c400]/25 bg-white/5 p-7 shadow-xl lg:col-span-2">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">3rd Tuesday of each month</p>
-                <h4 className="mt-2 text-2xl font-black">Union Craft Brewing</h4>
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-4">
+                <VenueLogo src="/Union Craft Logo.png" alt="Union Craft Brewing logo" />
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f9c400]">3rd Tuesday of each month</p>
+                  <h4 className="mt-2 text-2xl font-black">Union Craft Brewing</h4>
+                </div>
               </div>
-              <span className="rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
+              <span className="w-fit rounded-full bg-[#f9c400] px-4 py-2 text-sm font-black text-black">6:00 PM – 8:30 PM</span>
             </div>
             <p className="mt-5 leading-8 text-[#fff7df]/78">
               Intro to American Mahjong and guided play American Mahjong tables.
@@ -165,8 +208,33 @@ export default function App() {
               <p className="font-black text-[#f9c400]">Location</p>
               <p className="mt-2 text-[#fff7df]/75">1700 W 41st St<br />Baltimore, MD 21211</p>
             </div>
-            <EventLogoStrip />
           </article>
+        </div>
+
+        <div className="mt-16 rounded-[2rem] border border-[#d90416]/35 bg-gradient-to-br from-[#d90416]/15 to-white/[0.03] p-7 md:p-9">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#ff6b78]">Pop-Up Events</p>
+              <h3 className="mt-2 text-3xl font-black md:text-4xl">Upcoming pop-ups</h3>
+              <p className="mt-3 max-w-2xl leading-7 text-[#fff7df]/70">Special $35 Mahjong events at featured local venues. Register using the same Bmore Mahjong registration form used for monthly events.</p>
+            </div>
+            <span className="w-fit rounded-full bg-[#d90416] px-5 py-2 text-sm font-black text-white">$35 per person</span>
+          </div>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {popUpEvents.map((event) => (
+              <article key={event.name} className="flex flex-col gap-5 rounded-[1.5rem] border border-white/10 bg-black/30 p-6 shadow-xl sm:flex-row sm:items-center">
+                <VenueLogo src={event.logo} alt={`${event.name} logo`} size="popup" />
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff6b78]">Upcoming Pop-Up</p>
+                  <h4 className="mt-1 text-xl font-black">{event.name}</h4>
+                  <p className="mt-2 text-sm text-[#fff7df]/60">{event.location}</p>
+                  <p className="mt-2 text-base font-black text-[#fff7df]">{event.date}</p>
+                  <p className="mt-1 text-sm font-semibold text-[#fff7df]/70">Event time coming soon</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
