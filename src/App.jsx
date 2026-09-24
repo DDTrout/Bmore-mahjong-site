@@ -11,10 +11,31 @@ const popUpEvents = [
     date: "Sunday, October 4, 2026",
   },
   {
+    name: "GiftPoke",
+    title: "Mahjong & Mimosas",
+    logo: "/GiftPoke Logo.png",
+    location: "Lutherville, Maryland",
+    date: "Sunday, October 25, 2026",
+    time: "11:30 AM – 2:30 PM",
+  },
+  {
     name: "Joanna's Cafe",
     logo: "/Joannas Cafe Logo.png",
     location: "Dundalk, Maryland",
     date: "Tuesday, October 27, 2026",
+  },
+  {
+    name: "Harford Vineyard & Winery",
+    logo: "/Harford Vineyard Logo.png",
+    location: "Forest Hill, Maryland",
+    date: "Sunday, November 15, 2026",
+  },
+  {
+    name: "GiftPoke",
+    title: "Tiles Before Turkey — Open Play",
+    logo: "/GiftPoke Logo.png",
+    location: "Lutherville, Maryland",
+    date: "Monday, November 23, 2026",
   },
 ];
 
@@ -45,6 +66,7 @@ export default function App() {
         <nav className="hidden items-center gap-6 text-sm font-semibold text-[#fff7df]/80 md:flex">
           <a href="#about" className="hover:text-[#f9c400]">About</a>
           <a href="#events" className="hover:text-[#f9c400]">Events</a>
+          <a href="#private-events" className="hover:text-[#f9c400]">Private Events</a>
           <a href="#history" className="hover:text-[#f9c400]">History</a>
           <a href="#connect" className="hover:text-[#f9c400]">Connect</a>
         </nav>
@@ -223,18 +245,48 @@ export default function App() {
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {popUpEvents.map((event) => (
-              <article key={event.name} className="flex flex-col gap-5 rounded-[1.5rem] border border-white/10 bg-black/30 p-6 shadow-xl sm:flex-row sm:items-center">
+              <article key={`${event.name}-${event.date}`} className="flex flex-col gap-5 rounded-[1.5rem] border border-white/10 bg-black/30 p-6 shadow-xl sm:flex-row sm:items-center">
                 <VenueLogo src={event.logo} alt={`${event.name} logo`} size="popup" />
                 <div>
                   <p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff6b78]">Upcoming Pop-Up</p>
                   <h4 className="mt-1 text-xl font-black">{event.name}</h4>
+                  {event.title && <p className="mt-1 font-semibold text-[#fff7df]">{event.title}</p>}
                   <p className="mt-2 text-sm text-[#fff7df]/60">{event.location}</p>
                   <p className="mt-2 text-base font-black text-[#fff7df]">{event.date}</p>
-                  <p className="mt-1 text-sm font-semibold text-[#fff7df]/70">Event time coming soon</p>
+                  <p className="mt-1 text-sm font-semibold text-[#fff7df]/70">{event.time || "Event time coming soon"}</p>
                 </div>
               </article>
             ))}
           </div>
+        </div>
+
+        <div className="mt-12 rounded-[2rem] border border-[#f9c400]/35 bg-[#f9c400]/10 p-7 md:p-9">
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Special Instruction</p>
+          <h3 className="mt-2 text-3xl font-black md:text-4xl">Mahjong for Beginners</h3>
+          <article className="mt-7 flex flex-col gap-6 rounded-[1.5rem] border border-white/10 bg-black/30 p-6 sm:flex-row sm:items-center">
+            <VenueLogo src="/GiftPoke Logo.png" alt="GiftPoke logo" size="popup" />
+            <div>
+              <h4 className="text-xl font-black">Beginner instruction at GiftPoke</h4>
+              <p className="mt-2 text-sm text-[#fff7df]/65">Lutherville, Maryland</p>
+              <p className="mt-2 font-black">Monday, November 16, 2026</p>
+              <p className="mt-1 text-sm font-semibold text-[#fff7df]/70">Event time coming soon</p>
+              <p className="mt-4 leading-7 text-[#fff7df]/75">Learn the basics of American Mahjong in a welcoming beginner class.</p>
+              <p className="mt-3 font-black text-[#f9c400]">$50 per person for this instruction event</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="private-events" className="relative mx-auto max-w-7xl px-6 py-16">
+        <div className="rounded-[2rem] border border-[#f9c400]/35 bg-white/5 p-8 md:p-10">
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Private Events</p>
+          <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">Bring Mahjong to your group.</h2>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-[#fff7df]/75">
+            Bmore Mahjong offers in-home instruction and Mahjong party hosting for small groups. Email us for more information and rates for private events.
+          </p>
+          <a href="mailto:bmoremahjong@gmail.com?subject=Private%20Mahjong%20Event" className="mt-7 inline-flex items-center justify-center rounded-full bg-[#f9c400] px-7 py-3 font-black text-black transition hover:scale-[1.02]">
+            Ask About a Private Event ↗
+          </a>
         </div>
       </section>
 
