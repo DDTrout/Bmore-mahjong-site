@@ -1,0 +1,13 @@
+Bmore Mahjong website update — fall 2026
+
+Files to upload to https://github.com/DDTrout/Bmore-mahjong-site on the main branch:
+1. public/GiftPoke Logo.png — new file
+2. src/App.jsx — replace the existing file
+
+On GitHub, open the public folder, choose Add file > Upload files, upload the GiftPoke logo, and commit. Then open the src folder, choose Add file > Upload files, upload App.jsx, and commit. Keep the same filenames and folder paths shown above.
+
+If the Vercel project is connected to the main branch, those commits should trigger a deployment. Check the deployment and the events page afterward.
+
+November event times were not supplied, so the cards display “Event time coming soon.” The beginner class has a $50 price and no registration button, since a class-specific payment link was not supplied. The existing general pop-up registration button remains as it was.
+
+Local verification: date/weekday labels and requested copy checked. A full Vite build could not run in this environment because npm registry access returned 403.
