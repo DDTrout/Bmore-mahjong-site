@@ -9,6 +9,7 @@ const popUpEvents = [
     logo: "/Harford Vineyard Logo.png",
     location: "Forest Hill, Maryland",
     date: "Sunday, October 4, 2026",
+    time: "1:00 PM – 3:30 PM",
   },
   {
     name: "GiftPoke",
@@ -23,12 +24,38 @@ const popUpEvents = [
     logo: "/Joannas Cafe Logo.png",
     location: "Dundalk, Maryland",
     date: "Tuesday, October 27, 2026",
+    time: "6:00 PM – 8:30 PM",
+  },
+  {
+    name: "Pickett Brewing Company",
+    logo: "/pickett-brewing-logo.png",
+    location: "Baltimore, Maryland",
+    date: "Saturday, November 7, 2026",
+    time: "12:30 PM – 3:00 PM",
+  },
+  {
+    name: "Farmacy Brewing",
+    logo: "/farmacy-brewing-logo.jpeg",
+    location: "Reisterstown, Maryland",
+    date: "Sunday, November 8, 2026",
+    time: "2:00 PM – 4:30 PM",
   },
   {
     name: "Harford Vineyard & Winery",
     logo: "/Harford Vineyard Logo.png",
     location: "Forest Hill, Maryland",
     date: "Sunday, November 15, 2026",
+    time: "1:00 PM – 3:30 PM",
+  },
+  {
+    name: "La Petite Mort Books",
+    title: "Pungs, Pages & Prosecco",
+    logo: "/la-petite-mort-books-logo.png",
+    location: "Cockeysville, Maryland",
+    date: "Sunday, November 22, 2026",
+    time: "10:00 AM – 12:30 PM",
+    type: "Instruction Only",
+    details: "An instruction-only American Mahjong learning event. $35 per person.",
   },
   {
     name: "GiftPoke",
@@ -36,6 +63,7 @@ const popUpEvents = [
     logo: "/GiftPoke Logo.png",
     location: "Lutherville, Maryland",
     date: "Monday, November 23, 2026",
+    time: "6:00 PM – 8:30 PM",
   },
 ];
 
@@ -248,12 +276,13 @@ export default function App() {
               <article key={`${event.name}-${event.date}`} className="flex flex-col gap-5 rounded-[1.5rem] border border-white/10 bg-black/30 p-6 shadow-xl sm:flex-row sm:items-center">
                 <VenueLogo src={event.logo} alt={`${event.name} logo`} size="popup" />
                 <div>
-                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff6b78]">Upcoming Pop-Up</p>
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff6b78]">{event.type || "Upcoming Pop-Up"}</p>
                   <h4 className="mt-1 text-xl font-black">{event.name}</h4>
                   {event.title && <p className="mt-1 font-semibold text-[#fff7df]">{event.title}</p>}
                   <p className="mt-2 text-sm text-[#fff7df]/60">{event.location}</p>
                   <p className="mt-2 text-base font-black text-[#fff7df]">{event.date}</p>
                   <p className="mt-1 text-sm font-semibold text-[#fff7df]/70">{event.time || "Event time coming soon"}</p>
+                  {event.details && <p className="mt-3 text-sm leading-6 text-[#fff7df]/75">{event.details}</p>}
                 </div>
               </article>
             ))}
@@ -322,3 +351,4 @@ export default function App() {
     </main>
   );
 }
+
