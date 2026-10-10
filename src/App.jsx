@@ -5,13 +5,6 @@ const registrationUrl = "https://forms.gle/o1Hwyrj5sqdB4cM27";
 
 const popUpEvents = [
   {
-    name: "Harford Vineyard & Winery",
-    logo: "/Harford Vineyard Logo.png",
-    location: "Forest Hill, Maryland",
-    date: "Sunday, October 4, 2026",
-    time: "1:00 PM – 3:30 PM",
-  },
-  {
     name: "GiftPoke",
     title: "Mahjong & Mimosas",
     logo: "/GiftPoke Logo.png",
@@ -48,22 +41,34 @@ const popUpEvents = [
     time: "1:00 PM – 3:30 PM",
   },
   {
-    name: "La Petite Mort Books",
-    title: "Pungs, Pages & Prosecco",
-    logo: "/la-petite-mort-books-logo.png",
-    location: "Cockeysville, Maryland",
-    date: "Sunday, November 22, 2026",
-    time: "10:00 AM – 12:30 PM",
-    type: "Instruction Only",
-    details: "An instruction-only American Mahjong learning event. $35 per person.",
-  },
-  {
     name: "GiftPoke",
     title: "Tiles Before Turkey — Open Play",
     logo: "/GiftPoke Logo.png",
     location: "Lutherville, Maryland",
     date: "Monday, November 23, 2026",
     time: "6:00 PM – 8:30 PM",
+  },
+];
+
+const beginnerEvents = [
+  {
+    name: "GiftPoke",
+    title: "Beginner instruction at GiftPoke",
+    logo: "/GiftPoke Logo.png",
+    location: "Lutherville, Maryland",
+    date: "Monday, November 16, 2026",
+    description: "Learn the basics of American Mahjong in a welcoming beginner class.",
+    price: 50,
+  },
+  {
+    name: "La Petite Mort Books",
+    title: "Pungs, Pages & Prosecco",
+    logo: "/la-petite-mort-books-logo.png",
+    location: "Cockeysville, Maryland",
+    date: "Sunday, November 22, 2026",
+    time: "10:00 AM – 12:30 PM",
+    description: "An instruction-only American Mahjong learning event for beginners.",
+    price: 35,
   },
 ];
 
@@ -292,17 +297,23 @@ export default function App() {
         <div className="mt-12 rounded-[2rem] border border-[#f9c400]/35 bg-[#f9c400]/10 p-7 md:p-9">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f9c400]">Special Instruction</p>
           <h3 className="mt-2 text-3xl font-black md:text-4xl">Mahjong for Beginners</h3>
-          <article className="mt-7 flex flex-col gap-6 rounded-[1.5rem] border border-white/10 bg-black/30 p-6 sm:flex-row sm:items-center">
-            <VenueLogo src="/GiftPoke Logo.png" alt="GiftPoke logo" size="popup" />
-            <div>
-              <h4 className="text-xl font-black">Beginner instruction at GiftPoke</h4>
-              <p className="mt-2 text-sm text-[#fff7df]/65">Lutherville, Maryland</p>
-              <p className="mt-2 font-black">Monday, November 16, 2026</p>
-              <p className="mt-1 text-sm font-semibold text-[#fff7df]/70">Event time coming soon</p>
-              <p className="mt-4 leading-7 text-[#fff7df]/75">Learn the basics of American Mahjong in a welcoming beginner class.</p>
-              <p className="mt-3 font-black text-[#f9c400]">$50 per person for this instruction event</p>
-            </div>
-          </article>
+          <div className="mt-7 grid gap-5 md:grid-cols-2">
+            {beginnerEvents.map((event) => (
+              <article key={`${event.name}-${event.date}`} className="flex flex-col gap-6 rounded-[1.5rem] border border-white/10 bg-black/30 p-6 sm:flex-row sm:items-center">
+                <VenueLogo src={event.logo} alt={`${event.name} logo`} size="popup" />
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#f9c400]">Instruction Only</p>
+                  <h4 className="mt-1 text-xl font-black">{event.name}</h4>
+                  <p className="mt-1 font-semibold">{event.title}</p>
+                  <p className="mt-2 text-sm text-[#fff7df]/65">{event.location}</p>
+                  <p className="mt-2 font-black">{event.date}</p>
+                  <p className="mt-1 text-sm font-semibold text-[#fff7df]/70">{event.time || "Event time coming soon"}</p>
+                  <p className="mt-4 leading-7 text-[#fff7df]/75">{event.description}</p>
+                  <p className="mt-3 font-black text-[#f9c400]">${event.price} per person for this instruction event</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -351,4 +362,5 @@ export default function App() {
     </main>
   );
 }
+
 
